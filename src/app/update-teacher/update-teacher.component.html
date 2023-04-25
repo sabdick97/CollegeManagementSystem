@@ -1,0 +1,78 @@
+
+<h3 class="text-center">Update Teacher </h3>
+ <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container">
+<div class="form-group">
+    <label> First Name:</label>
+    <input formControlName="firstname" type="text" class="form-control" id="fname" name="firstName" [(ngModel)]="teacher.firstName" >
+</div>
+<div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="alert alert-danger">
+    <div *ngIf="f['firstname'].errors && f['firstname'].errors['required']">First Name is Mandatory</div>
+    <div *ngIf="f['firstname'].errors && f['firstname'].errors ['minlength']"> Minimum length must be 3 characters** </div>
+</div>
+
+<div class="form-group">
+    <label> Last Name:</label>
+    <input formControlName="lastname" type="lastname" class="form-control" id="lname" name="lastName" [(ngModel)]="teacher.lastName">
+</div>
+<div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="alert alert-danger">
+    <div *ngIf="f['lastname'].errors && f['lastname'].errors['required']">First Name is Mandatory</div>
+    <div *ngIf="f['lastname'].errors && f['lastname'].errors ['minlength']"> Minimum length must be 3 characters** </div>
+</div>
+<div class="form-group">
+    <label>Contact:</label>
+    <input formControlName="cont" type="cont" class="form-control" id="contact" name="contact" [(ngModel)]="teacher.contact">
+</div>
+<div *ngIf="f['cont'].touched && f['cont'].invalid" class="alert alert-danger">
+    <div *ngIf="f['cont'].errors &&  f['cont'].errors['required'] ">
+        Contact number is mandatory**
+    </div>
+    <div *ngIf="f['cont'].errors &&  f['cont'].errors['minlength'] ">
+        Minimum length must be 10 characters**
+    </div>
+    <div *ngIf="f['cont'].errors &&  f['cont'].errors['maxlength'] ">
+        Maximum length must be 10 characters**
+    </div>
+    <div *ngIf="f['cont'].errors &&  f['cont'].errors['pattern'] ">
+       Contact Number should always be numberic**
+    </div>
+</div>
+<div class="form-group">
+    <label> Email:</label>
+    <input formControlName="email" type="email" class="form-control" id="email" name="email" [(ngModel)]="teacher.email">
+</div>
+<div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email  is Mandatory</div>
+    <div *ngIf="f['email'].errors && f['email'].errors ['email']"> Please enter the correct email** </div>
+</div>
+
+<div class="form-group">
+    <label> UserName:</label>
+    <input formControlName="user" class="form-control" id="uname" name="userName" [(ngModel)]="teacher.userName">
+</div>
+<div *ngIf="f['user'].touched && f['user'].invalid" class="alert alert-danger">
+    <div *ngIf="f['user'].errors && f['user'].errors['required']">User Name is Mandatory</div>
+    <div *ngIf="f['user'].errors && f['user'].errors ['minlength']"> Minimum length must be 3 characters** </div>
+</div>
+
+
+
+
+<div class="form-group">
+    <label> Password:</label>
+    <input formControlName="password" type="password" class="form-control" id="password" name="password" [(ngModel)]="teacher.password">
+</div>
+<div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+    <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is Mandatory</div>
+    <div *ngIf="f['password'].errors && f['password'].errors ['minlength']"> Minimum length must be 3 characters** </div>
+</div>
+
+<br>
+
+<br>
+
+<button class="btn btn-success" type="submit"> Submit</button>
+
+</div> 
+</form>
+

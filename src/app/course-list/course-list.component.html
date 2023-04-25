@@ -1,0 +1,31 @@
+<h2 class="text-center"> <u>Course List</u></h2>>
+<div class="container">
+    <table class="table table-striped">
+
+ <thead>
+ <tr>
+ <th> Subject Id</th>
+ <th> Subject Name</th>
+ <th> Price</th>
+ <th> Actions</th>
+
+ </tr>
+
+</thead>
+ 
+ <tbody>
+    <tr *ngFor="let course of courses">
+    <td> {{course.subId}}</td>
+    <td> {{course.subName}}</td>
+    <td> {{course.price}}</td>
+    <td><button class="btn btn-info"(click)="updateCourse(course.subId)">Edit</button></td>
+    <td><button class="btn btn-danger"(click)="deleteCourse(course.subId)">Delete</button></td>
+    <td><button class="btn btn-info"(click)="viewid(course.subId)">View</button></td>
+
+
+    </tr>
+ </tbody>
+
+    </table>
+
+</div>
